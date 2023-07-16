@@ -100,7 +100,7 @@ void OdomPredictor::imuCallback(const sensor_msgs::ImuConstPtr& msg) {
   }
 
   publishOdometry();
-  publishTF();
+  // publishTF(); // commented out by SW. Trying to avoid TF_REPEATED_DATA warning in rviz and mavros
   ++seq_;
 }
 
