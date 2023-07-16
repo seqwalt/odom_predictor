@@ -11,7 +11,7 @@ OdomPredictor::OdomPredictor(const ros::NodeHandle& nh,
 
   constexpr size_t kROSQueueLength = 100;
   imu_sub_ =
-      nh_.subscribe("/hummingbird/vi_sensor/imu", kROSQueueLength, &OdomPredictor::imuCallback, this);
+      nh_.subscribe("camera/imu", kROSQueueLength, &OdomPredictor::imuCallback, this);
   imu_bias_sub_ = nh_.subscribe("/rovio/imu_biases", kROSQueueLength,
                                 &OdomPredictor::imuBiasCallback, this);
   odometry_sub_ = nh_.subscribe("/rovio/odometry", kROSQueueLength,
